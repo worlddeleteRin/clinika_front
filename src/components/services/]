@@ -1,0 +1,12 @@
+<template>
+	<div>
+		services container is here, sevices cards will be here
+	</div>
+</template>
+
+<script>
+import ServicesCard from '@/components/services/ServicesCard.vue';
+export default {
+	name: "BaseServicesComponent",
+}
+</script>

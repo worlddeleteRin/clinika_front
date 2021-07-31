@@ -1,5 +1,7 @@
 <template>
-	<HeaderComponent />
+	<HeaderComponent 
+		class="z-40"
+	/>
   <!--<img alt="Vue logo" src="./assets/logo.png"> -->
 	<router-view :key="$route.fullPath"></router-view>
 </template>
@@ -10,21 +12,6 @@ export default {
   name: 'App',
   components: {
 	HeaderComponent,
-  },
-  beforeMount() {
-	this.$store.dispatch("initTheme");
-  },
-  computed: {
-	currentTheme () {
-		return this.$store.state.theme.theme
-	}
-  },
-  watch: {
-	currentTheme(newTheme) {
-		newTheme === "light"
-		? document.querySelector("html").classList.remove("dark")
-		: document.querySelector("html").classList.add("dark")
-	}
   },
 }
 </script>
