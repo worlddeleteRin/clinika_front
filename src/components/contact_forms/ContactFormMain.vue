@@ -43,7 +43,9 @@
 
 <script>
 import { reactive } from 'vue'
-import { ElNotification } from 'element-plus';
+// import { ElNotification } from 'element-plus';
+import { createToast } from 'mosha-vue-toastify';
+import 'mosha-vue-toastify/dist/style.css'
 // custom imports
 import { APIsendContactRequest } from "@/api/contact.js";
 
@@ -79,18 +81,21 @@ export default {
 			return is_valid
 		}
 		function errorSendContactRequest (is_valid) {
-			ElNotification({
-				title: 'Ошибка при отправке заявки',
-				message: is_valid.message,
-				type: 'error',
-			});
+			createToast(
+				is_valid.message,
+			)
+//			ElNotification({
+//				title: 'Ошибка при отправке заявки',
+//				message: is_valid.message,
+//				type: 'error',
+//			});
 		}
 		function successSendContactRequest () {
-			ElNotification({
-				title: 'Заявка успешно отправлена!',
-				message: "Ваша заявка успешно отправлена! В ближайшее время с Вами свяжется менеджер 🕣",
-				type: 'success',
-			});
+//			ElNotification({
+//				title: 'Заявка успешно отправлена!',
+//				message: "Ваша заявка успешно отправлена! В ближайшее время с Вами свяжется менеджер 🕣",
+//				type: 'success',
+//			});
 		}
 
 		function setUnmaskedPhone(event) {
