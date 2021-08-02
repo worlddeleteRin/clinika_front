@@ -28,7 +28,11 @@
 	</div>
 	<!-- company info main -->
 	<!-- feature blocks -->
-	<div class="px-4 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+	<div class="mt-6 mb-14">
+	<div class="text-2xl font-semibold text-center text-black md:text-3xl">
+		Почему выбирают нас?
+	</div>
+	<div class="px-4 mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
 		<!-- feature block -->	
 		<div 
 		v-for="feature in features"
@@ -42,6 +46,7 @@
 			</div>
 		</div>
 		<!-- eof feature block -->
+	</div>
 	</div>
 	<!-- eof feature blocks -->
 

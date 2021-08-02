@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="-my-2 -mr-2 md:hidden">
-          <PopoverButton class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-black">
+          <PopoverButton class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:rinВсblack">
             <span class="sr-only">Open menu</span>
             <MenuIcon class="text-black w-7 h-7" aria-hidden="true" />
           </PopoverButton>
@@ -103,7 +103,7 @@
 
 			<HeaderLink
 			link_name="Акции"
-			link_to="/prices"
+			link_to="/stock"
 			:is_active="false"
 			/>
 			<HeaderLink
@@ -193,8 +193,10 @@ import { ChevronDownIcon, ChevronDoubleRightIcon,
 	} from '@heroicons/vue/solid'
 import HeaderLink from './HeaderLink.vue';
 
-const static_host = 'http://192.168.1.111:8080/'
-const logo_link = static_host + "logo_black.svg"
+
+import { static_host } from '@/settings.js';
+// const static_host = 'http://192.168.1.141:8080/'
+const logo_link = static_host + "/logo_black.svg"
 
 const solutions = [
   {
@@ -217,12 +219,12 @@ const about_us_links = [
 	},
 	{
 		name: 'Отзывы',
-		href: '#',
+		href: '/aboutus/comments',
 		icon: AnnotationIcon,
 	},
 	{
 		name: 'Контакты',
-		href: '#',
+		href: '/aboutus/contact',
 		icon: PhoneIcon,
 	},
 	{

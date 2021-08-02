@@ -13,11 +13,6 @@
     </router-link>
 	<!-- eof logo block -->
 
-	<div>
-		<call-popup-contact-form-main
-			:title="Запись на прием"
-		/>
-	</div>
 
 	<!-- cp block -->
     <p class="mt-4 text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">
@@ -25,6 +20,13 @@
     </p>
 	<!-- eof cp block -->
 
+
+	<div class="flex flex-1 my-6 sm:my-1 sm:ml-8">
+		<CallPopupContactFormMain
+			:title="'Запись на прием'"
+			class="px-8 py-2 text-lg text-black bg-white rounded-md"
+		/>
+	</div>
 
 	<!-- social block -->
     <span class="inline-flex items-center justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
@@ -46,7 +48,7 @@
 <script>
 import { static_host } from '@/settings.js';
 import { Icon } from '@iconify/vue';
-import { CallPopupContactFormMain } from '@/components/contact_forms/CallPopupContactFormMain.vue';
+import CallPopupContactFormMain from '@/components/contact_forms/CallPopupContactFormMain.vue';
 
 export default {
 	name: "BaseFooterComponent",
