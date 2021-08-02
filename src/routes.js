@@ -1,53 +1,42 @@
-import MainPage from '@/pages/MainPage.vue';
-import PricePage from '@/pages/PricePage.vue';
-import ServicePage from '@/pages/ServicePage.vue';
-import ServicesPage from '@/pages/ServicesPage.vue';
-// about us pages
-import CompanyPage from '@/pages/CompanyPage.vue';
-import ContactPage from '@/pages/ContactPage.vue';
-import CommentsPage from '@/pages/CommentsPage.vue';
-// eof about us pages
-import StockPage from '@/pages/StockPage.vue';
-import StockItemPage from '@/pages/StockItemPage.vue';
 
 const main_pages = [
 	{
 		path: '/',
-		component: MainPage,
+		component: () => import('@/pages/MainPage.vue'),
 	},
 	{
 		path: '/prices',
-		component: PricePage,
+		component: () => import('@/pages/PricePage.vue'),
 	},
 	{
 		path: '/services',
-		component: ServicesPage,
+		component: () => import('@/pages/ServicesPage.vue'),
 	},
 	{
 		path: '/aboutus/company',
-		component: CompanyPage
+		component: () => import('@/pages/CompanyPage.vue'),
 	},
 	{
 		path: '/aboutus/comments',
-		component: CommentsPage,
+		component: () => import('@/pages/CommentsPage.vue'),
 	},
 	{
 		path: '/aboutus/contact',
-		component: ContactPage,
+		component:  () => import('@/pages/ContactPage.vue'),
 	},
 	{
 		path: '/stock',
-		component: StockPage,
+		component: () => import('@/pages/StockPage.vue'),
 	},
 ]
 const dynamic_pages = [
 	{
 		path: '/service/:slug',
-		component: ServicePage,
+		component: () => import('@/pages/ServicePage.vue'),
 	},
 	{
 		path: '/stock/:id',
-		component: StockItemPage,
+		component: () => import('@/pages/StockItemPage.vue'),
 	},
 ]
 
