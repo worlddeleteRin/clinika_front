@@ -20,12 +20,16 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vuex';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 // custom components
 import HeaderComponent from './components/HeaderComponent.vue';
 import BaseFooterComponent from './components/footer/BaseFooterComponent.vue';
-import PopupContactFormMain from './components/contact_forms/PopupContactFormMain.vue';
+
+const PopupContactFormMain  = defineAsyncComponent(
+ () => import('./components/contact_forms/PopupContactFormMain.vue')
+ );
 
 export default {
   name: 'App',
