@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vuex';
+import { defineAsyncComponent } from 'vue';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 // custom components
