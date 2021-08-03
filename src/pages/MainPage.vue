@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import MainPageSlider from '@/components/sliders/MainPageSlider.vue';
+import MainPageSlider from '@/components/sliders/MainPageSlider2.vue';
 import ServicesListComponent from '@/components/services/ServicesListComponent.vue';
 export default {
   name: 'MainPage',
