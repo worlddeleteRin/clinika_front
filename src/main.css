@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 
+.mosha__toast {
+	width: 85% !important;
+	max-width: 400px !important;
+	margin-right: 9px !important;
+	z-index: 2000;
+}
+
 @font-face {
 	font-family: "Jost";
 	src: url("./assets/fonts/JostThin.ttf") format("truetype");

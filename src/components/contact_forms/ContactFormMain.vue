@@ -30,7 +30,7 @@
 		<!-- send form button -->
 		<div 
 		@click="sendContactRequest"
-		class="text-black bg-white w-full max-w-[300px] text-center mt-8 py-4 px-3 rounded-md
+		class="select-none text-black bg-white w-full max-w-[300px] text-center mt-8 py-4 px-3 rounded-md
 		text-lg tracking-wider mx-auto font-medium cursor-pointer">
 			Отправить заявку		
 		</div>
@@ -43,6 +43,7 @@
 
 <script>
 import { reactive } from 'vue'
+import { useStore } from 'vuex';
 // import { ElNotification } from 'element-plus';
 import { createToast } from 'mosha-vue-toastify';
 import 'mosha-vue-toastify/dist/style.css'
@@ -58,6 +59,8 @@ export default {
 		}
 	},
 	setup () {
+		const store = useStore()
+		const request_sent_msg = 'Ваша заявка успешно отправлена! В ближайшее время с Вами свяжется менеджер  🧑'
 		const contact_form = reactive({
 			name: '',
 			phone: '',
@@ -80,22 +83,30 @@ export default {
 			is_valid.status = true
 			return is_valid
 		}
-		function errorSendContactRequest (is_valid) {
+		function errorSendContactRequest (message) {
 			createToast(
-				is_valid.message,
+				message, {
+				timeout: 3000,
+				type: 'danger',
+				showIcon: true,
+			//	toastBackgroundColor: "black"
+				}
 			)
-//			ElNotification({
-//				title: 'Ошибка при отправке заявки',
-//				message: is_valid.message,
-//				type: 'error',
-//			});
 		}
 		function successSendContactRequest () {
-//			ElNotification({
-//				title: 'Заявка успешно отправлена!',
-//				message: "Ваша заявка успешно отправлена! В ближайшее время с Вами свяжется менеджер 🕣",
-//				type: 'success',
-//			});
+			createToast(
+				request_sent_msg, {
+				timeout: 8000,
+				type: 'success',
+				showIcon: true,
+				}
+			)
+		}
+
+		function clearForm() {
+			contact_form.name = ''
+			contact_form.phone = ''
+			contact_form.phone_mask = ''
 		}
 
 		function setUnmaskedPhone(event) {
@@ -105,17 +116,25 @@ export default {
 		async function sendContactRequest () {
 			var is_valid = validateContactInfo() 
 			if (!is_valid.status) {
-				return errorSendContactRequest(is_valid)
+				return errorSendContactRequest(is_valid.message)
 			}
-			await APIsendContactRequest(contact_form)
-			return successSendContactRequest()
+			const send_status = await APIsendContactRequest(contact_form)
+			if (!send_status) {
+				return errorSendContactRequest('Ошибка при отправке заявки')
+			}
+			// close main contact popup, if it is open
+			successSendContactRequest()
+			clearForm()
+			store.commit('setContactMainOpen', false)
 		}
 		return {
 			contact_form,
 			// functions
 			setUnmaskedPhone,
 			sendContactRequest,
+			request_sent_msg,
 		}
 	}
 }
 </script>
+

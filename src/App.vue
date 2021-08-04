@@ -1,7 +1,13 @@
 <template>
+
+
 	<HeaderComponent 
 		class="z-40"
 	/>
+<!--
+	<header-component2
+	/>
+	-->
 
 	<transition name="el-fade-in-linear">
 		<popup-contact-form-main
@@ -9,10 +15,12 @@
 		/>
 	</transition>
 
-  <!--<img alt="Vue logo" src="./assets/logo.png"> -->
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+	<div class="min-h-screen">
 
 	<router-view :key="$route.fullPath"></router-view>
 
+	</div>
 
 	<base-footer-component
 	/>
@@ -25,6 +33,8 @@ import { useStore } from 'vuex';
 import { computed } from 'vue';
 // custom components
 import HeaderComponent from './components/HeaderComponent.vue';
+// import HeaderComponent2 from './components/HeaderComponent2.vue';
+
 import BaseFooterComponent from './components/footer/BaseFooterComponent.vue';
 
 const PopupContactFormMain  = defineAsyncComponent(
@@ -35,8 +45,13 @@ export default {
   name: 'App',
   components: {
 	HeaderComponent,
+//	HeaderComponent2,
 	BaseFooterComponent,
 	PopupContactFormMain,
+  },
+  mounted () {
+	// get services list on initial page load
+	this.$store.dispatch('getServices')
   },
   setup () {
 	const store = useStore()

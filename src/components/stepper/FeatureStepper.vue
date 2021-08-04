@@ -37,7 +37,7 @@ export default {
 		Icon,
 	},
 	props: {
-		feature_steps: [],
+		feature_steps: Array,
 	}
 }
 </script>

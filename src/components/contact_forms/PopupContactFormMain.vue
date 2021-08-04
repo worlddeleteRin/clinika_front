@@ -9,7 +9,7 @@
 
 
 
-	<div class="absolute cursor-pointer left-1/2 top-10"
+	<div class="relative cursor-pointer"
 	@click="closePopupContactFormMain"
 	>
 		<Icon
@@ -20,7 +20,7 @@
 	</div>
 
 	<ContactFormMain
-		class="w-11/12"
+		class="w-11/12 mt-3"
 	/>
 
 </div>

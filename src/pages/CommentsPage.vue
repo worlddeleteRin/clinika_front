@@ -31,10 +31,12 @@
 <script>
 import { computed, reactive } from 'vue'
 import { useStore } from 'vuex'
-import { ElNotification } from 'element-plus';
+import { createToast } from 'mosha-vue-toastify';
 // custom components
 import CommentCard from '@/components/comments/CommentCard.vue';
 import AddCommentForm from '@/components/comments/AddCommentForm.vue';
+// toast styles
+import 'mosha-vue-toastify/dist/style.css'
 export default {
 	name: 'CommentsPage',
 	props: {
@@ -59,6 +61,10 @@ export default {
 //		})
 		var comments = computed(() => store.state.comments.comments)
 		// functions
+		function clearForm () {
+			new_comment.name = ""
+			new_comment.content = ""
+		}
 		function validateComment () {
 			var is_valid = {
 				status: false,
@@ -76,18 +82,22 @@ export default {
 			return is_valid
 		}
 		function errorCreateComment(is_valid) {
-			ElNotification({
-				title: 'Ошибка при создании отзыва',
-				message: is_valid.message,
-				type: 'error',
-			});
+			createToast(
+				is_valid.message, {
+				timeout: 3000,
+				type: 'danger',
+				showIcon: true,
+				}
+			)
 		}
 		function successCreateComment() {
-			ElNotification({
-				title: 'Отзыв добавлен!',
-				message: 'Ваш отзыв был успешно добавлен',
+			createToast(
+				'Ваш отзыв был успешно добавлен!', {
+				timeout: 6000,
 				type: 'success',
-			});
+				showIcon: true,
+				}
+			)
 		}
 		function createComment() {
 			console.log("clicked to create comment")
@@ -104,6 +114,9 @@ export default {
 			}
 			console.log(comment)
 			store.dispatch("createComment", { new_comment: comment } )
+			// clear comment form after comment is added
+			clearForm()
+			// display success message of comment added
 			return successCreateComment()
 		}
 

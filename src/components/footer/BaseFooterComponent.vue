@@ -24,7 +24,7 @@
 	<div class="flex flex-1 my-6 sm:my-1 sm:ml-8">
 		<CallPopupContactFormMain
 			:title="'Запись на прием'"
-			class="px-8 py-2 text-lg text-black bg-white rounded-md"
+			class="px-8 py-2 text-lg text-black bg-white rounded-md select-none"
 		/>
 	</div>
 

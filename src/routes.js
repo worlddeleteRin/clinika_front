@@ -28,6 +28,10 @@ const main_pages = [
 		path: '/stock',
 		component: () => import('@/pages/StockPage.vue'),
 	},
+	{
+		path: '/staff',
+		component: () => import('@/pages/StaffPage.vue'),
+	},
 ]
 const dynamic_pages = [
 	{
