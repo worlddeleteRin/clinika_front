@@ -4,6 +4,7 @@ import comments from './modules/comments'
 import popup from './modules/popup'
 import services from './modules/services'
 import staff from './modules/staff'
+import stocks from './modules/stocks.js'
 
 export const store = createStore({
 	modules: {
@@ -12,5 +13,6 @@ export const store = createStore({
 		popup,
 		services,
 		staff,
+		stocks,
 	}
 })

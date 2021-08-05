@@ -49,10 +49,11 @@ export default {
 	BaseFooterComponent,
 	PopupContactFormMain,
   },
-  mounted () {
+	mounted () {
 	// get services list on initial page load
 	this.$store.dispatch('getServices')
 	this.$store.dispatch('getStaffMembers')
+	this.$store.dispatch('getStocks')
   },
   setup () {
 	const store = useStore()

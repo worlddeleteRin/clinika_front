@@ -26,11 +26,13 @@ class="px-2 mx-auto bg-gray-50 py-7 rounded-md max-w-screen-xl">
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 // custom imports
+import LoadingContainer from '@/components/loaders/LoadingContainer.vue';
 import ServicesCard from '@/components/services/ServicesCard.vue';
 export default {
 	name: "BaseServicesComponent",
 	components: {
 		ServicesCard,
+		LoadingContainer,
 	},
 	beforeMount() {
 	},

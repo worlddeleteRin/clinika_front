@@ -8,10 +8,11 @@
 	<div class="px-4 mx-auto mt-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 		<!-- stock card -->
 		<div
-			v-for="i in 10"
-			:key="i"
+			v-for="stock in stocks"
+			:key="stock"
 		>
 		<stock-card
+		:stock="stock"
 		/>
 		</div>
 		<!-- eof stock card -->
@@ -30,6 +31,11 @@ export default {
 	StockCard,
   },
 	setup () {
+	},
+	computed: {
+		stocks () {
+			return this.$store.state.stocks.stocks
+		}
 	}
 }
 </script>

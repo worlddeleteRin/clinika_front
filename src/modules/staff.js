@@ -13,7 +13,6 @@ export default {
 	},
 	actions: {
 		async getStaffMembers ({commit}) {
-			console.log('start get staff members ')
 			var staff_members = await APIgetStaffMembers()
 			commit('setStaffMembers', staff_members)		
 		},

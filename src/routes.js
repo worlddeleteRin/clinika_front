@@ -39,7 +39,7 @@ const dynamic_pages = [
 		component: () => import('@/pages/ServicePage.vue'),
 	},
 	{
-		path: '/stock/:id',
+		path: '/stock/:slug',
 		component: () => import('@/pages/StockItemPage.vue'),
 	},
 ]
