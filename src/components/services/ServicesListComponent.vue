@@ -1,5 +1,6 @@
 <template>
 <div 
+v-if="services.length > 0"
 class="px-2 mx-auto bg-gray-50 py-7 rounded-md max-w-screen-xl">
 
 	<transition name="el-collapse-transition">
@@ -15,6 +16,10 @@ class="px-2 mx-auto bg-gray-50 py-7 rounded-md max-w-screen-xl">
 	</div>
 	</transition>
 </div>
+	<loading-container
+	:loading_title="'Загрузка персонала...'"
+	v-else
+	/>
 </template>
 
 <script>
