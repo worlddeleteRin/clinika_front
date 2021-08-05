@@ -29,7 +29,7 @@
     },
 	data () {
 		return {
-			image_link: "https://slavinskaya.info/sites/default/files/full_screen_thumb_1000x850_Kiev_clinic_hallway_04_View02.jpg",
+			image_link: "https://novostipmr.com/sites/default/files/filefield_paths/rpror.jpg",
 			options: {
 				rewind: true,
 				perPage: 1,

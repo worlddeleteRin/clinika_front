@@ -8,10 +8,9 @@
 	<div class="items-center justify-center mx-auto mt-5 border-2 border-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 grid-flow-row max-w-max">
 	<!-- staff members cards -->
 		<staff-card
-		v-for="staff_member in staff_members"
-		:key="staff_member"
-		:staff_member="staff_member"
-		class="h-full max-w-max"
+		v-for="i in 10"
+		:key="i"
+		class="border-2 border-red-500 max-w-max"
 		/>
 	<!-- eof staff members cards -->
 	</div>
@@ -20,24 +19,12 @@
 </template>
 
 <script>
-import { computed } from 'vue';
-import { useStore } from 'vuex';
-// local components
 import StaffCard from '@/components/staff/StaffCard.vue';
 export default {
 	components: {
 		StaffCard,
 	},
 	name: "StaffPage",
-	setup () {
-		const store = useStore()
-		// computed
-		const staff_members = computed (() => store.state.staff.staff_members)
-		return {
-			// computed
-			staff_members,
-		}
-	}
 }
 </script>
 

@@ -52,6 +52,7 @@ export default {
   mounted () {
 	// get services list on initial page load
 	this.$store.dispatch('getServices')
+	this.$store.dispatch('getStaffMembers')
   },
   setup () {
 	const store = useStore()

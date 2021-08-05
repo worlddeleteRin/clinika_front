@@ -24,20 +24,29 @@
 	<div class="flex flex-1 my-6 sm:my-1 sm:ml-8">
 		<CallPopupContactFormMain
 			:title="'Запись на прием'"
-			class="px-8 py-2 text-lg text-black bg-white rounded-md select-none"
+			class="px-8 py-2 text-lg text-black bg-white select-none rounded-md"
 		/>
 	</div>
 
 	<!-- social block -->
     <span class="inline-flex items-center justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
-		<Icon
-		icon="bx:bxl-vk"
-		width="35"
-		/>
-		<Icon
-		icon="bx:bxl-instagram"
-		width="32"
-		/>
+		<a
+		:href="vk_link"
+		class="mr-2"
+		>
+			<Icon
+			icon="bx:bxl-vk"
+			width="35"
+			/>
+		</a>
+		<a
+		:href="inst_link"
+		>
+			<Icon
+			icon="bx:bxl-instagram"
+			width="32"
+			/>
+		</a>
     </span>
 	<!-- eof socials block -->
 
@@ -46,7 +55,7 @@
 </template>
 
 <script>
-import { static_host } from '@/settings.js';
+import { static_host, vk_link, inst_link } from '@/settings.js';
 import { Icon } from '@iconify/vue';
 import CallPopupContactFormMain from '@/components/contact_forms/CallPopupContactFormMain.vue';
 
@@ -60,6 +69,8 @@ export default {
 		const logo_path = static_host + '/logo_white.svg'
 		return {
 			logo_path,
+			vk_link,
+			inst_link,
 		}
 	}
 }

@@ -1,7 +1,7 @@
 <template>
 	<div
 	@click="openPopupContactFormMain"
-	class=""
+	class="cursor-pointer select-none"
 	>
 		{{ title }}
 	</div>

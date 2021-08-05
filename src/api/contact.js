@@ -13,7 +13,6 @@ export async function APIsendContactRequest(contact_form) {
 		api_url + '/contact_request',
 		contact_info
 	).then((response) => {
-		console.log('response is', response)
 		var resp_status = response.data.status
 		if (resp_status == 'success') {
 			status = true
