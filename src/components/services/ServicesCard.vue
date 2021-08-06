@@ -1,6 +1,6 @@
 <template>
 
-<router-link :to="'/service/' + 'some-service-slug'"
+<router-link :to="'/service/' + service.slug"
 class="relative bg-transparent cursor-pointer mb-14">
 	<!-- service image -->
 	<div>

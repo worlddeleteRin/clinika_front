@@ -13,10 +13,22 @@ import Maska from 'maska'
 
 const app = createApp(App)
 
+//const router = createRouter({
+//	history: createWebHashHistory(),
+//	routes
+//})
+
 const router = createRouter({
 	history: createWebHashHistory(),
-	routes
+	routes,
+	scrollBehavior (to, from, savedPosition) {
+	console.log(to,  from , savedPosition)
+		return { top: 0 }
+		// return desired position
+	}
 })
+
+
 
 //app.use(ElementPlus)
 app.use(Maska)
