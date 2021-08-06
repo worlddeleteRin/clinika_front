@@ -15,3 +15,16 @@ export async function APIgetServices () {
 	})
 	return services 
 }
+
+export async function APIgetCurrentService (service_slug) {
+	var service = {}
+	await axios.get(
+		api_url+'/services/' + service_slug,
+	).then((response) => {
+		const current_service = response.data.current_service
+		service = current_service
+	}).catch((error) => {
+		console.log('error is', error)
+	})
+	return service 
+}
