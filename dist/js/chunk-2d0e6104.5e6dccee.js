@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e6104"],{"96c4":function(e,c,n){"use strict";n.r(c);var r=n("7a23");function s(e,c,n,s,t,u){return Object(r["w"])(),Object(r["g"])("div",null," Service page is here "+Object(r["H"])(s.service_slug),1)}var t=n("6c02"),u={name:"ServicePage",props:{},components:{},computed:{},methods:{},setup:function(){var e=Object(t["c"])(),c=e.params.slug;return{service_slug:c}}};u.render=s;c["default"]=u}}]);
-//# sourceMappingURL=chunk-2d0e6104.5e6dccee.js.map
