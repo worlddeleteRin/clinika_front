@@ -29,7 +29,7 @@
     },
 	data () {
 		return {
-			image_link: "https://novostipmr.com/sites/default/files/filefield_paths/rpror.jpg",
+			image_link: "https://avatars.mds.yandex.net/get-altay/235931/2a0000015e61326ed5fed58f78196824da26/XXL",
 			options: {
 				rewind: true,
 				perPage: 1,

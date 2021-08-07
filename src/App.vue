@@ -49,9 +49,9 @@ export default {
 	BaseFooterComponent,
 	PopupContactFormMain,
   },
-	mounted () {
+	async mounted () {
 	// get services list on initial page load
-	this.$store.dispatch('getServices')
+	await this.$store.dispatch('getServices')
 	this.$store.dispatch('getStaffMembers')
 	this.$store.dispatch('getStocks')
   },

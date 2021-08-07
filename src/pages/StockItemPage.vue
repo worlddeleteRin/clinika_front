@@ -5,10 +5,10 @@
 <div 
         class="max-w-3xl mx-auto">
         <!-- stock_image -->
-        <div class="">
+        <div class="flex mx-auto max-h-[350px] rounded-xl">
             <img 
 				:src="current_stock.imgsrc[0]"
-                class="rounded-xl" 
+                class="object-contain w-full rounded-md" 
 			/>
         </div>
         <div 

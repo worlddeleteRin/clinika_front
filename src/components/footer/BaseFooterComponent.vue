@@ -1,7 +1,7 @@
 <template>
 
 <footer class="text-white bg-black body-font">
-  <div class="container flex flex-col items-center px-5 py-4 mx-auto sm:flex-row md:px-12">
+  <div class="container flex flex-col items-center px-5 py-4 mx-auto md:flex-row md:px-12">
 
 	<!-- logo black -->
     <router-link :to="'/'"
@@ -15,21 +15,36 @@
 
 
 	<!-- cp block -->
-    <p class="mt-4 text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">
+    <p class="mt-4 text-sm text-white md:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 md:py-2 md:mt-0">
 		© 2021 MIRACLINIC —
     </p>
 	<!-- eof cp block -->
 
 
-	<div class="flex flex-1 my-6 sm:my-1 sm:ml-8">
+	<div class="flex my-6 md:w-3/12 md:my-1 md:ml-8">
 		<CallPopupContactFormMain
 			:title="'Запись на прием'"
 			class="px-8 py-2 text-lg text-black bg-white select-none rounded-md"
 		/>
 	</div>
 
+	<!-- contact block -->
+	<div>
+		<a
+		:href="'tel:'+ main_phone"
+		class="block mt-2 text-xl text-center">
+			{{ main_phone_label }}
+		</a>
+		<!--
+		<div class="mt-2 text-sm text-center">
+			{{ main_address }}
+		</div>
+		-->
+	</div>
+	<!-- eof contact block -->
+
 	<!-- social block -->
-    <span class="inline-flex items-center justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
+    <span class="inline-flex items-center justify-center mt-4 md:ml-auto md:mt-0 md:justify-start">
 		<a
 		:href="vk_link"
 		class="mr-2"
@@ -55,7 +70,7 @@
 </template>
 
 <script>
-import { static_host, vk_link, inst_link } from '@/settings.js';
+import { static_host, vk_link, inst_link, main_phone, main_phone_label, main_address } from '@/settings.js';
 import { Icon } from '@iconify/vue';
 import CallPopupContactFormMain from '@/components/contact_forms/CallPopupContactFormMain.vue';
 
@@ -71,6 +86,9 @@ export default {
 			logo_path,
 			vk_link,
 			inst_link,
+			main_phone,
+			main_phone_label,
+			main_address,
 		}
 	}
 }

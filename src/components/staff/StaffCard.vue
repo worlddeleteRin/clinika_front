@@ -38,10 +38,18 @@
 		</div>
 
             <!-- sign_up_button -->
+			<!-- 
             <div 
                 class="px-8 py-3 mx-auto mt-4 text-lg font-semibold tracking-wide text-white bg-black cursor-pointer select-none max-w-max rounded-xl">
                 Записаться на прием 
             </div>
+			-->
+			<!-- eof sign_up_button -->
+
+			<call-popup-contact-form-main
+			:title="'Записаться на прием'"
+			class="w-11/12 py-3 mx-auto mt-3 text-lg tracking-wider text-center text-white bg-black rounded-md"
+			/>
 
     </div>	
 
@@ -51,10 +59,14 @@
 </template>
 
 <script>
+import CallPopupContactFormMain from '@/components/contact_forms/CallPopupContactFormMain.vue';
 export default {
 	name: "StaffCard",
 	props: {
 		staff_member: Object,		
+	},
+	components: {
+		CallPopupContactFormMain,
 	},
 	setup () {
 		const member_image = "https://novostipmr.com/sites/default/files/filefield_paths/rpror.jpg"	

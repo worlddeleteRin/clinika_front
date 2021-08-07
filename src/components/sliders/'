@@ -140,9 +140,7 @@
         <div class="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50">
           <div class="px-5 pt-5 pb-6">
             <div class="flex items-center justify-between">
-              <router-link 
-			@click="closeMobileMenu"	
-			:to="'/'">
+              <router-link :to="'/'">
                 <img class="w-auto h-8" :src="logo_link"
 				alt="Workflow" />
               </router-link>

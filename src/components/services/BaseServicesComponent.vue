@@ -5,6 +5,7 @@
 	</div>
 	<div>
 		<services-list-component 
+		:services="services"
 		/>
 	</div>
 </div>
@@ -17,5 +18,10 @@ export default {
 	components: {
 		ServicesListComponent,
 	},
+	computed: {
+		services () {
+			return this.$store.state.services.services
+		}
+	}
 }
 </script>

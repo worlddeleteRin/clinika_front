@@ -32,6 +32,10 @@ const main_pages = [
 		path: '/staff',
 		component: () => import('@/pages/StaffPage.vue'),
 	},
+	{
+		path: '/documents',
+		component: () => import('@/pages/DocumentPage.vue'),
+	},
 ]
 const dynamic_pages = [
 	{
