@@ -1,4 +1,5 @@
-const static_host = "http://192.168.1.133:8080"
+// const static_host = "http://192.168.1.133:8080"
+const static_host = "http://miraclinic.fast-code.ru"
 const logo_black_path = static_host + '/logo_black.svg';
 const logo_white_path = static_host + '/logo_white.svg';
 const main_phone = "79785106051"
