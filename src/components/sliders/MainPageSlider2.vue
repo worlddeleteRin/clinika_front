@@ -1,16 +1,16 @@
 <template>
   <splide
-	class="mx-auto"
+	class="mx-auto rounded-md"
   >
 
     <splide-slide
-	class="flex justify-center text-center"
+	class="flex justify-center text-center rounded-md"
 	v-for="i in 4"
 	:key="i"
 	:options="options"
 	>
 		<img 
-		class="object-cover w-full max-h-80"
+		class="object-cover w-full max-h-80 rounded-md"
 		:src="image_link"/>
 	</splide-slide>
 

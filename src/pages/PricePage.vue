@@ -25,7 +25,7 @@
 						{{ subservice.name }}
 					</div>
 					<div class="text-xl font-medium">
-						{{ subservice.price }}
+						{{ subservice.price }} &#8381;
 					</div>
 				</div>
 			</div>

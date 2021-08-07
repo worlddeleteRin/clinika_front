@@ -5,7 +5,8 @@ import {
 
 export default {
 	state: {
-		stocks: [],
+		stocks: Array,
+		stocks_loaded: false,
 		current_stock: {},
 	},
 	mutations: {
@@ -15,7 +16,10 @@ export default {
 		setCurrentStock(state, stock) {
 			state.current_stock = stock
 			console.log('current stock is', state.current_stock)
-		}
+		},
+		setStocksLoaded(state, is_loaded) {
+			state.stocks_loaded = is_loaded
+		},
 	},
 	getters: {
 		getStockBySlug: (state) => (slug) => {
@@ -26,8 +30,10 @@ export default {
 	},
 	actions: {
 		async getStocks ({commit}) {
+			commit('setStocksLoaded', false)
 			var stocks = await APIgetStocks()
 			commit('setStocks', stocks)		
+			commit('setStocksLoaded', true)
 		},
 		async getCurrentStock ({commit}, stock_slug) {
 			var stock = await APIgetCurrentStock(stock_slug)

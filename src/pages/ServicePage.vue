@@ -38,11 +38,11 @@
 			:key="subservice"
 			class="flex justify-between w-full px-3 py-3 mt-2 bg-gray-100 rounded-md"
 		>
-			<div class="mr-1">
+			<div class="w-9/12 mr-1">
 				{{ subservice.name }}
 			</div>
-			<div class="text-xl font-medium">
-				{{ subservice.price }}
+			<div class="w-3/12 text-xl font-medium text-right">
+				{{ subservice.price }} &#8381;
 			</div>
 		</div>
 	</div>

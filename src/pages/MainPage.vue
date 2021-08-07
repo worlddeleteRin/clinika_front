@@ -40,6 +40,12 @@
 	<!-- eof company info -->
 
 
+	<div class="mt-10 text-2xl font-semibold text-center md:text-3xl">
+		Наши специалисты	
+	</div>
+
+	<div
+	class="mt-7">
 	<!-- staff slider -->
 		<staff-slider
 		v-if="staff_loaded"
@@ -47,17 +53,46 @@
 		class=""
 		/>
 	<!-- eof staff slider-->
+	</div>
 
 	<!-- company feature component -->
 		<company-feature-component
+		class="mt-16"
 		/>
 	<!-- company feature component -->
 
+
+
+	<div class="text-2xl font-semibold text-center mt-14 md:text-3xl">
+		Актуальные акции	
+	</div>
+	<!-- stocks slider -->
+	<div class="px-4 mt-8">
+		<stocks-slider
+			v-if="stocks_loaded"	
+			:stocks="stocks"
+		/>
+	</div>
+	<!-- eof stocks slider -->
+
+	<div 
+	class="block w-full mx-auto text-center mt-14">
+		<router-link :to="'/stock'"
+		class="px-5 py-3 text-xl tracking-wider text-white bg-black rounded-md">
+		Смотреть все акции 
+		</router-link>
+	</div>
+
+
+
+	<div class="w-full px-4 mb-8 mt-14">
 	<!-- contact main block -->
 		<contact-main-block
-		class="mx-4 mt-8 mb-8"
+		class="max-w-xl mx-auto"
 		/>
 	<!-- eof contact main block -->
+	</div>
+
 
 
 </div>
@@ -67,6 +102,7 @@
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 // custom components
+import StocksSlider from '@/components/sliders/StocksSlider.vue';
 import StaffSlider from '@/components/sliders/StaffSlider.vue';
 import CompanyInfoMainComponent from '@/components/aboutus/CompanyInfoMainComponent.vue';
 import MainPageSlider from '@/components/sliders/MainPageSlider2.vue';
@@ -85,6 +121,7 @@ export default {
 	CompanyInfoMainComponent,
 	CompanyFeatureComponent,
 	StaffSlider,
+	StocksSlider,
 	ContactMainBlock,
   },
   async mounted () {
@@ -106,13 +143,17 @@ export default {
 	const services = computed(() => store.state.services.services)
 	const services_loaded = computed( () => store.state.services.services_loaded)
 	const staff_members = computed( () => store.state.staff.staff_members)
+	const stocks = computed ( () => store.state.stocks.stocks)
 	const staff_loaded = computed( () => store.state.staff.staff_loaded)
+	const stocks_loaded = computed( () => store.state.stocks.stocks_loaded)
 	return {
 		// computed
 		services,
 		services_loaded,
 		staff_members,
+		stocks,
 		staff_loaded,
+		stocks_loaded,
 	}
   }
 }

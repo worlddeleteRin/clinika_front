@@ -48,6 +48,14 @@ export default {
 				"title": "5888",
 				"subtitle": "Брекет систем установлено"
 			},
+			{
+				"title": "5888",
+				"subtitle": "Брекет систем установлено"
+			},
+			{
+				"title": "5888",
+				"subtitle": "Брекет систем установлено"
+			},
 		]
 		return {
 			features,

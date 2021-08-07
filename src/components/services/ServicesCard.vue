@@ -3,10 +3,11 @@
 <router-link :to="'/service/' + service.slug"
 class="relative bg-transparent cursor-pointer mb-14">
 	<!-- service image -->
-	<div>
+	<div class="relative overflow-hidden">
+		<div class="absolute top-0 left-0 w-full h-full bg-black rounded-md"></div>
 		<img 
 			:src="service.imgsrc[0]"
-			class="rounded-md"
+			class="relative rounded-md opacity-80"
 		/>
 	</div>
 	<!-- eof service image -->

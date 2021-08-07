@@ -6,12 +6,12 @@
 
     <splide-slide
 	class=""
-	v-for="staff_member in staff_members"
-	:key="staff_member"
+	v-for="stock in stocks"
+	:key="stock"
 	>
-		<div class="">
-			<staff-card 
-			:staff_member="staff_member"
+		<div class="mx-3">
+			<stock-card 
+				:stock="stock"
 			class=""
 			/>
 		</div>
@@ -21,23 +21,23 @@
 
 </template>
 <script>
-import StaffCard from '@/components/staff/StaffCard.vue';
+import StockCard from '@/components/stock/StockCard.vue';
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 	
 export default {
+	name: "StocksSlider",
 	components: {
+		StockCard,
 		Splide,
 		SplideSlide,
-		StaffCard,
     },
 	props: {
-		staff_members: Array,
+		stocks: Array,
 	},
 	data () {
 		return {
-			image_link: "https://avatars.mds.yandex.net/get-altay/235931/2a0000015e61326ed5fed58f78196824da26/XXL",
 			options: {
 				pagination: false,
 				rewind: true,
