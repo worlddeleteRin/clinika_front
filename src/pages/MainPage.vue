@@ -48,7 +48,16 @@
 		/>
 	<!-- eof staff slider-->
 
+	<!-- company feature component -->
+		<company-feature-component
+		/>
+	<!-- company feature component -->
 
+	<!-- contact main block -->
+		<contact-main-block
+		class="mx-4 mt-8 mb-8"
+		/>
+	<!-- eof contact main block -->
 
 
 </div>
@@ -62,6 +71,10 @@ import StaffSlider from '@/components/sliders/StaffSlider.vue';
 import CompanyInfoMainComponent from '@/components/aboutus/CompanyInfoMainComponent.vue';
 import MainPageSlider from '@/components/sliders/MainPageSlider2.vue';
 import ServicesListComponent from '@/components/services/ServicesListComponent.vue';
+import CompanyFeatureComponent from '@/components/aboutus/CompanyFeatureComponent.vue';
+import ContactMainBlock from '@/components/contact/ContactMainBlock.vue';
+
+
 export default {
   name: 'MainPage',
   props: {
@@ -70,7 +83,9 @@ export default {
 	MainPageSlider,
 	ServicesListComponent,
 	CompanyInfoMainComponent,
+	CompanyFeatureComponent,
 	StaffSlider,
+	ContactMainBlock,
   },
   async mounted () {
 	console.log('it is mounted')
