@@ -1,4 +1,5 @@
 <template>
+
 <div class="mx-auto max-w-screen-xl">
 	<!-- main page slider -->
 	<div class="mt-3">
@@ -9,7 +10,7 @@
 	<!-- eof main page slider -->
 
 
-		
+	
 	<!-- services block -->
 	<div class="mt-8">
 		<div class="mb-5 text-2xl font-semibold text-center md:text-3xl">
@@ -32,6 +33,24 @@
 		</div>
 	</div>
 	<!-- eof services block -->
+
+	<!-- company info -->
+	<company-info-main-component
+	/>
+	<!-- eof company info -->
+
+
+	<!-- staff slider -->
+		<staff-slider
+		v-if="staff_loaded"
+		:staff_members="staff_members"
+		class=""
+		/>
+	<!-- eof staff slider-->
+
+
+
+
 </div>
 </template>
 
@@ -39,6 +58,8 @@
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 // custom components
+import StaffSlider from '@/components/sliders/StaffSlider.vue';
+import CompanyInfoMainComponent from '@/components/aboutus/CompanyInfoMainComponent.vue';
 import MainPageSlider from '@/components/sliders/MainPageSlider2.vue';
 import ServicesListComponent from '@/components/services/ServicesListComponent.vue';
 export default {
@@ -48,6 +69,8 @@ export default {
   components: {
 	MainPageSlider,
 	ServicesListComponent,
+	CompanyInfoMainComponent,
+	StaffSlider,
   },
   async mounted () {
 	console.log('it is mounted')
@@ -61,18 +84,20 @@ export default {
 		return this.$store.state.theme.theme;
 	},
   },
-  methods: {
-	
-  },
+
   setup () {
 	const store = useStore()
 	// computed
 	const services = computed(() => store.state.services.services)
 	const services_loaded = computed( () => store.state.services.services_loaded)
+	const staff_members = computed( () => store.state.staff.staff_members)
+	const staff_loaded = computed( () => store.state.staff.staff_loaded)
 	return {
 		// computed
 		services,
 		services_loaded,
+		staff_members,
+		staff_loaded,
 	}
   }
 }

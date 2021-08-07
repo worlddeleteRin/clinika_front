@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="">
 	<!-- main staff card container -->		
     <div 
         class="flex flex-col justify-between h-full max-w-xs px-4 py-3 mx-auto bg-gray-100 rounded-md">
